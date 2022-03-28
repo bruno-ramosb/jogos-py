@@ -25,15 +25,19 @@ for rodada in range(1,total_tentativas+1):
     print("Você digitou ",chute_str)
     chute=int(chute_str)
 
+    acertou = chute == numero_secreto
+    maior = chute > numero_secreto
+    menor = chute < numero_secreto
+
     if(chute<1 or chute >100):
         print("Você deve digitar um número de 1 a 100!")
         continue
-    elif(chute==numero_secreto):
+    elif(acertou):
         print("Você acertou !")
         break
-    elif(chute>numero_secreto):
+    elif(maior):
         print("Chute realizado maior que o número secreto")
-    elif(chute<numero_secreto):
+    elif(menor):
         print("Chute realizado menor que o número secreto")
 
 
